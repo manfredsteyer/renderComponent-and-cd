@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵmarkDirty  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ivy-demo';
+
+  stuff() {
+    this.title = 'Hello Ivy, it\'s ' + new Date().toLocaleTimeString();
+    // ɵmarkDirty(this);
+  }
 }
